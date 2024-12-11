@@ -43,4 +43,18 @@ class CvController extends Controller
         $pdf = Pdf::loadView('cv.pdf', compact('cv'));
         return $pdf->download('cv_' . $cv->full_name . '.pdf');
     }
+
+    public function downloadPdf(Request $request, CV $cv)
+    {
+        $template = $request->get('template', 'template1'); // Plantilla por defecto
+
+        // Validar que la plantilla exista
+        if (!in_array($template, ['template1', 'template2'])) {
+            $template = 'template1';
+        }
+
+        $pdf = PDF::loadView("cv_templates.{$template}", compact('cv'));
+
+        return $pdf->download("CV_{$cv->full_name}_{$template}.pdf");
+    }
 }

@@ -35,7 +35,7 @@
     <div class="main-container">
         <main>
             <div class="grid-container">
-                <!-- Estructura vacía para contenido futuro -->
+                <x-application-logo class="text-gray-800 dark:text-gray-200" />
             </div>
         </main>
     </div>

@@ -4,17 +4,6 @@ use App\Http\Controllers\CvController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Aquí es donde se registran todas las rutas web para la aplicación.
-| Estas rutas son cargadas por el RouteServiceProvider dentro de un
-| grupo que contiene el middleware "web".
-|
-*/
-
 // Ruta principal que muestra la vista de bienvenida
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/cv/{id}', [CvController::class, 'show'])->name('cv.show');
 
     // Ruta para generar el PDF del CV
+    Route::get('/cv/pdf/{cv}', [CVController::class, 'downloadPdf'])->name('cv.pdf');
+
     Route::get('/cv/{cv}/pdf', [CvController::class, 'generatePdf'])->name('cv.pdf');
 
     // Rutas para gestionar el perfil del usuario
