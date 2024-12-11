@@ -1,9 +1,12 @@
 <x-app-layout>
-    {{-- <x-slot name="header">
+    {{-- Opcional: Slot para el encabezado --}}
+    {{-- 
+    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-    </x-slot> --}}
+    </x-slot> 
+    --}}
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -21,7 +24,7 @@
                         <div class="modal-content bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-lg shadow-lg border-0">
                             <div class="modal-header border-b border-gray-200 dark:border-gray-700">
                                 <h1 class="modal-title fs-5 font-semibold" id="exampleModalCreateLabel">Registro</h1>
-                                <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                             </div>
                             <div class="modal-body p-4">
                                 <!-- Contenido del modal (Formulario) -->
@@ -30,6 +33,7 @@
                                         <form action="{{ route('cv.store') }}" method="POST" class="space-y-4">
                                             @csrf
 
+                                            {{-- Campo Nombre Completo --}}
                                             <div>
                                                 <label for="full_name" class="block mb-1 text-sm font-medium">Nombre Completo</label>
                                                 <input type="text" id="full_name" name="full_name" required
@@ -37,6 +41,7 @@
                                                     placeholder="Ejemplo: Juan Pérez">
                                             </div>
 
+                                            {{-- Campo Información de Contacto --}}
                                             <div>
                                                 <label for="contact_info" class="block mb-1 text-sm font-medium">Información de Contacto</label>
                                                 <textarea id="contact_info" name="contact_info" required
@@ -44,6 +49,7 @@
                                                     placeholder="Correo, teléfono, dirección..."></textarea>
                                             </div>
 
+                                            {{-- Campo Educación --}}
                                             <div>
                                                 <label for="education" class="block mb-1 text-sm font-medium">Educación</label>
                                                 <textarea id="education" name="education" required
@@ -51,6 +57,7 @@
                                                     placeholder="Instituciones, títulos y fechas..."></textarea>
                                             </div>
 
+                                            {{-- Campo Experiencia Laboral --}}
                                             <div>
                                                 <label for="work_experience" class="block mb-1 text-sm font-medium">Experiencia Laboral</label>
                                                 <textarea id="work_experience" name="work_experience" required
@@ -58,6 +65,7 @@
                                                     placeholder="Cargos, empresas y periodos laborales..."></textarea>
                                             </div>
 
+                                            {{-- Campo Habilidades --}}
                                             <div>
                                                 <label for="skills" class="block mb-1 text-sm font-medium">Habilidades</label>
                                                 <textarea id="skills" name="skills" required
@@ -65,6 +73,7 @@
                                                     placeholder="Lista de habilidades relevantes..."></textarea>
                                             </div>
 
+                                            {{-- Campo Idiomas --}}
                                             <div>
                                                 <label for="languages" class="block mb-1 text-sm font-medium">Idiomas</label>
                                                 <textarea id="languages" name="languages" required
@@ -72,6 +81,7 @@
                                                     placeholder="Lista de idiomas y nivel de dominio..."></textarea>
                                             </div>
 
+                                            {{-- Botón de Envío --}}
                                             <div class="pt-4 flex justify-end">
                                                 <button type="submit"
                                                     class="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md bg-green-600 hover:bg-green-700 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
@@ -105,7 +115,7 @@
                         <div class="modal-content border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
                             <div class="modal-header border-b border-gray-200 dark:border-gray-700">
                                 <h1 class="modal-title fs-5 font-semibold" id="exampleModalViewLabel">CV Registrado</h1>
-                                <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                             </div>
                             <div class="modal-body p-4">
                                 <!-- Contenido del modal (Visualización de datos) -->
@@ -120,9 +130,9 @@
                                     </div>
 
                                     <div class="mt-4">
-                                        <a href="{{ route('cv.pdf', $cv) }}"
-                                            class="inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
-                                            Descargar PDF
+                                        <a href="{{ route('cv.pdf', $cv) }}" 
+                                           class="btn btn-primary bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                                            Descargar CV en PDF
                                         </a>
                                     </div>
                                 @else
