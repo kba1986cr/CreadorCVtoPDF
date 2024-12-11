@@ -8,4 +8,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'dist', // Cambiar a 'dist'
+        rollupOptions: {
+            input: 'resources/js/app.js',
+        },
+    },
 });
