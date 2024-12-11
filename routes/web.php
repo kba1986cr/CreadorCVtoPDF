@@ -16,6 +16,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/cv', [CvController::class, 'store'])->name('cv.store');
+    Route::post('cv', [CvController::class, 'store'])->name('cv.store');
+    Route::get('cv/{cv}', [CvController::class, 'show'])->name('cv.show');
+    Route::get('cv/{cv}/pdf', [CvController::class, 'generatePdf'])->name('cv.pdf');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

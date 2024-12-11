@@ -10,10 +10,18 @@ class Cv extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'full_name', 'contact_info', 'education', 
-        'work_experience', 'skills', 'languages',
+        'full_name',
+        'contact_info',
+        'education',
+        'work_experience',
+        'skills',
+        'languages',
+        'user_id', // Asegúrate de incluir 'user_id' si se asigna
     ];
 
+    /**
+     * Relación con el usuario.
+     */
     public function user()
     {
         return $this->belongsTo(User::class);

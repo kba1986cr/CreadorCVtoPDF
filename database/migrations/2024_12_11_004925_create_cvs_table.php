@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id'); // Relación con el usuario
             $table->string('full_name');
             $table->text('contact_info');
             $table->text('education');
@@ -22,9 +22,15 @@ return new class extends Migration
             $table->text('skills');
             $table->text('languages');
             $table->timestamps();
+
+            // Llave foránea
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
+    /**
+     * Revertir las migraciones.
+     */
     public function down()
     {
         Schema::dropIfExists('cvs');
