@@ -38,23 +38,9 @@ class CvController extends Controller
         return view('dashboard', compact('cv'));
     }
 
-    /**
-     * Genera y descarga el CV en formato PDF.
-     *
-     * @param  \App\Models\Cv  $cv
-     * @return \Illuminate\Http\Response
-     */
     public function generatePdf(Cv $cv)
     {
-        // Verifica que el CV pertenece al usuario autenticado
-        if ($cv->user_id !== auth()->id()) {
-            abort(403, 'Acceso no autorizado');
-        }
-
-        // Carga la vista 'cv.pdf' pasando el CV y genera el PDF
         $pdf = Pdf::loadView('cv.pdf', compact('cv'));
-
-        // Retorna el PDF para descarga con un nombre personalizado
-        return $pdf->download('cv_' . Str::slug($cv->full_name) . '.pdf');
+        return $pdf->download('cv_' . $cv->full_name . '.pdf');
     }
 }
