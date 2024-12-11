@@ -17,18 +17,16 @@
             color: #333;
             line-height: 1.6;
             padding: 20px;
-            /* Borde leve azul alrededor de toda la página */
-            border: 2px solid #add8e6; /* Light Blue */
-            border-radius: 10px;
-            max-width: 950px;
-            margin: 40px auto; /* Centrar la página con margen superior e inferior */
-            background-color: #fff; /* Fondo blanco para el contenido */
         }
 
         .container {
             max-width: 900px;
-            margin: auto;
+            margin: 40px auto; /* Centrar la página con margen superior e inferior */
             padding: 30px;
+            background-color: #fff; /* Fondo blanco para el contenido */
+            border: 2px solid #add8e6; /* Marco celeste */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional para mayor profundidad */
         }
 
         header {
@@ -52,13 +50,13 @@
         }
 
         header h1 {
-            font-size: 14px; /* Tamaño para el nombre */
+            font-size: 24px; /* Aumentar tamaño para mayor legibilidad */
             color: #000; /* Nombre en negro */
             margin-bottom: 10px;
         }
 
         header p {
-            font-size: 10px; /* Tamaño para el contacto */
+            font-size: 14px; /* Tamaño para el contacto */
             color: #555; /* Contenido en gris */
         }
 
@@ -71,7 +69,7 @@
         }
 
         section h2 {
-            font-size: 12px; /* Tamaño para títulos de secciones */
+            font-size: 18px; /* Tamaño para títulos de secciones */
             color: #000; /* Títulos en negro */
             margin-bottom: 10px;
             border-bottom: 1px solid #ccc;
@@ -80,7 +78,7 @@
 
         .section-content p,
         .section-content ul {
-            font-size: 10px; /* Tamaño para el contenido */
+            font-size: 14px; /* Tamaño para el contenido */
             color: #555; /* Contenido en gris */
             margin-left: 20px;
         }
@@ -91,13 +89,17 @@
         }
 
         .skills li, .languages li {
-            background: #ccc; /* Fondo gris para las etiquetas */
+            /* Eliminamos el fondo celeste */
+            /* background: #add8e6; */ /* Fondo celeste para las etiquetas */
             color: #000; /* Texto en negro */
-            padding: 3px 8px;
-            margin: 3px;
+            padding: 5px 10px;
+            margin: 5px;
+            /* Opcional: puedes mantener el border-radius si deseas bordes redondeados */
             border-radius: 15px;
             list-style: none;
-            font-size: 10px;
+            font-size: 14px;
+            /* Opcional: agregar un borde sutil para mantener un estilo distintivo */
+            /* border: 1px solid #000; */
         }
 
         @media (max-width: 600px) {

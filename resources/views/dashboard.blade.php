@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-t from-sky-400 to-gray-300 dark:bg-gradient-to-t dark:from-sky-600 dark:to-gray-800">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="flex flex-col items-center">
                 <!-- Botón para abrir el modal de creación -->
@@ -139,7 +139,5 @@
                 </div>
             </div>
         </div>
-
-        <!-- Otras secciones de tu Dashboard... -->
-    </div>
+    </div>    
 </x-app-layout>
