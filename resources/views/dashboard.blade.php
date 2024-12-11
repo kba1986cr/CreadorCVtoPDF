@@ -1,9 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -33,48 +33,48 @@
                                             <div>
                                                 <label for="full_name" class="block mb-1 text-sm font-medium">Nombre Completo</label>
                                                 <input type="text" id="full_name" name="full_name" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Ejemplo: Juan Pérez">
                                             </div>
 
                                             <div>
                                                 <label for="contact_info" class="block mb-1 text-sm font-medium">Información de Contacto</label>
                                                 <textarea id="contact_info" name="contact_info" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Correo, teléfono, dirección..."></textarea>
                                             </div>
 
                                             <div>
                                                 <label for="education" class="block mb-1 text-sm font-medium">Educación</label>
                                                 <textarea id="education" name="education" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Instituciones, títulos y fechas..."></textarea>
                                             </div>
 
                                             <div>
                                                 <label for="work_experience" class="block mb-1 text-sm font-medium">Experiencia Laboral</label>
                                                 <textarea id="work_experience" name="work_experience" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Cargos, empresas y periodos laborales..."></textarea>
                                             </div>
 
                                             <div>
                                                 <label for="skills" class="block mb-1 text-sm font-medium">Habilidades</label>
                                                 <textarea id="skills" name="skills" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Lista de habilidades relevantes..."></textarea>
                                             </div>
 
                                             <div>
                                                 <label for="languages" class="block mb-1 text-sm font-medium">Idiomas</label>
                                                 <textarea id="languages" name="languages" required
-                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                                    class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
                                                     placeholder="Lista de idiomas y nivel de dominio..."></textarea>
                                             </div>
 
                                             <div class="pt-4 flex justify-end">
                                                 <button type="submit"
-                                                    class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                                                    class="inline-flex items-center px-4 py-2 text-sm font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md bg-green-600 hover:bg-green-700 active:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
                                                     Crear CV
                                                 </button>
                                             </div>
@@ -102,7 +102,7 @@
                 <!-- Modal para Ver CV -->
                 <div class="modal fade" id="exampleModalView" tabindex="-1" aria-labelledby="exampleModalViewLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
-                        <div class="modal-content bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-lg shadow-lg border-0">
+                        <div class="modal-content border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500">
                             <div class="modal-header border-b border-gray-200 dark:border-gray-700">
                                 <h1 class="modal-title fs-5 font-semibold" id="exampleModalViewLabel">CV Registrado</h1>
                                 <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal" aria-label="Close"></button>
