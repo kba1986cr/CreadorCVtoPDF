@@ -5,11 +5,88 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nisi, magnam modi reiciendis deleniti officia quibusdam cum cumque consectetur sed, eius eveniet totam ab fuga dolore? Aut, vel laudantium? Aperiam!
+    <!-- Botón para abrir el modal -->
+    <button type="button"
+        class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-center text-white uppercase transition duration-150 ease-in-out border-2 border-transparent rounded-md dark:text-sky-200 bg-sky-800 hover:bg-sky-700 active:bg-sky-700 focus:outline-none focus:border-sky-500"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Registrar Datos
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div
+                class="modal-content bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-lg shadow-lg border-0">
+                <div class="modal-header border-b border-gray-200 dark:border-gray-700">
+                    <h1 class="modal-title fs-5 font-semibold" id="exampleModalLabel">Registro</h1>
+                    <button type="button" class="btn-close dark:invert" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Contenido del modal -->
+                    <div class="max-w-3xl mx-auto">
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-md">
+                            <form action="{{ route('cv.store') }}" method="POST" class="space-y-4">
+                                @csrf
+
+                                <div>
+                                    <label for="full_name" class="block mb-1 text-sm font-medium">Nombre
+                                        Completo</label>
+                                    <input type="text" id="full_name" name="full_name" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Ejemplo: Juan Pérez">
+                                </div>
+
+                                <div>
+                                    <label for="contact_info" class="block mb-1 text-sm font-medium">Información de
+                                        Contacto</label>
+                                    <textarea id="contact_info" name="contact_info" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Correo, teléfono, dirección..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="education" class="block mb-1 text-sm font-medium">Educación</label>
+                                    <textarea id="education" name="education" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Instituciones, títulos y fechas..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="work_experience" class="block mb-1 text-sm font-medium">Experiencia
+                                        Laboral</label>
+                                    <textarea id="work_experience" name="work_experience" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Cargos, empresas y periodos laborales..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="skills" class="block mb-1 text-sm font-medium">Habilidades</label>
+                                    <textarea id="skills" name="skills" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Lista de habilidades relevantes..."></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="languages" class="block mb-1 text-sm font-medium">Idiomas</label>
+                                    <textarea id="languages" name="languages" required
+                                        class="block w-full border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500"
+                                        placeholder="Lista de idiomas y nivel de dominio..."></textarea>
+                                </div>
+
+                                <div class="pt-4 flex justify-end">
+                                    <button type="submit"
+                                        class="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded-md text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2">
+                                        Crear CV
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Fin del contenido del modal -->
+                </div>
+                <div class="modal-footer border-t border-gray-200 dark:border-gray-700">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

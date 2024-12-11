@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+        public function cvs()
+    {
+        return $this->hasMany(Cv::class);
+    }
 }
