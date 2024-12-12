@@ -16,8 +16,8 @@ Route::get('/dashboard', function () {
 
 // Grupo de rutas protegidas por el middleware de autenticación
 Route::middleware('auth')->group(function () {
-    // Ruta para Crear el CV
-    Route::get('/cv', [CvController::class, 'create'])->name('profileDos.create');
+    // Ruta para crear el CV
+    Route::get('/cv/create', [CvController::class, 'create'])->name('cv.create');
 
     // Ruta para almacenar el CV
     Route::post('/cv', [CvController::class, 'store'])->name('cv.store');
@@ -26,9 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cv/{id}', [CvController::class, 'show'])->name('cv.show');
 
     // Ruta para generar el PDF del CV
-    Route::get('/cv/pdf/{cv}', [CVController::class, 'downloadPdf'])->name('cv.pdf');
-
-    Route::get('/cv/{cv}/pdf', [CvController::class, 'generatePdf'])->name('cv.pdf');
+    Route::get('/cv/{cv}/pdf', [CvController::class, 'downloadPdf'])->name('cv.downloadPdf');
 
     // Rutas para gestionar el perfil del usuario
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
