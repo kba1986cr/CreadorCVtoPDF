@@ -10,17 +10,40 @@ class Cv extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'full_name',
-        'contact_info',
-        'education',
+        'address',
+        'phone',
+        'email',
+        'linkedin',
+        'portfolio',
+        'objective',
+        'profile',
         'work_experience',
+        'education',
         'skills',
         'languages',
-        'user_id', // Asegúrate de incluir 'user_id' si se asigna
+        'certifications',
+        'projects',
+        'achievements',
+        'references',
+        'additional_info',
+    ];
+
+    protected $casts = [
+        'work_experience' => 'array',
+        'education' => 'array',
+        'skills' => 'array',
+        'languages' => 'array',
+        'certifications' => 'array',
+        'projects' => 'array',
+        'achievements' => 'array',
+        'references' => 'array',
+        'additional_info' => 'array',
     ];
 
     /**
-     * Relación con el usuario.
+     * Relación con el usuario propietario del CV.
      */
     public function user()
     {

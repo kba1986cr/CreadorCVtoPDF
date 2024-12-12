@@ -16,6 +16,9 @@ Route::get('/dashboard', function () {
 
 // Grupo de rutas protegidas por el middleware de autenticación
 Route::middleware('auth')->group(function () {
+    // Ruta para Crear el CV
+    Route::get('/cv', [CvController::class, 'create'])->name('profileDos.create');
+
     // Ruta para almacenar el CV
     Route::post('/cv', [CvController::class, 'store'])->name('cv.store');
 
@@ -34,4 +37,4 @@ Route::middleware('auth')->group(function () {
 });
 
 // Inclusión de rutas de autenticación (login, registro, etc.)
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
