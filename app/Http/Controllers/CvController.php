@@ -7,14 +7,27 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Str;
 
 class CvController extends Controller
 {
-    public function create()
+    /**
+     * Muestra un CV específico.
+     *
+     * @param  \App\Models\Cv  $cv
+     * @return \Illuminate\View\View
+     */
+    public function show(Cv $cv)
     {
         return view('profileDos.create');
     }
 
+    /**
+     * Almacena un nuevo CV en la base de datos.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $validatedData = $request->validate([

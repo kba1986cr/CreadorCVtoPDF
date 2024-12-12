@@ -8,11 +8,13 @@ class CreateCvsTable extends Migration
 {
     /**
      * Ejecuta las migraciones.
+     *
+     * @return void
      */
     public function up()
-    {
+    {   
         Schema::create('cvs', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Crea una columna 'id' auto-incremental
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('full_name');
             $table->string('address')->nullable();
@@ -37,9 +39,11 @@ class CreateCvsTable extends Migration
 
     /**
      * Revierte las migraciones.
+     *
+     * @return void
      */
     public function down()
     {
         Schema::dropIfExists('cvs');
     }
-}
+};
