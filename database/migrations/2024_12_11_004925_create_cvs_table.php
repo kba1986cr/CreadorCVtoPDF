@@ -7,14 +7,15 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Ejecuta las migraciones.
+     *
+     * @return void
      */
-    // database/migrations/xxxx_xx_xx_xxxxxx_create_cvs_table.php
     public function up()
-    {
+    {   
         Schema::create('cvs', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id'); // Relación con el usuario
+            $table->id(); // Crea una columna 'id' auto-incremental
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('full_name');
             $table->text('contact_info');
             $table->text('education');
@@ -22,14 +23,13 @@ return new class extends Migration
             $table->text('skills');
             $table->text('languages');
             $table->timestamps();
-
-            // Llave foránea
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
     /**
-     * Revertir las migraciones.
+     * Revierte las migraciones.
+     *
+     * @return void
      */
     public function down()
     {
