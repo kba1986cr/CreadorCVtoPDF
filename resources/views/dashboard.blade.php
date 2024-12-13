@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-green-500 dark:text-blue-200 leading-tight">
             <div
-                class="py-12 bg-gradient-to-t from-sky-400 to-gray-300 dark:bg-gradient-to-t dark:from-sky-600 dark:to-gray-800">
+                class=class="py-12 bg-gray-600 dark:bg-gray-700">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="flex flex-col items-center">
                         <!-- Botón para abrir el modal de creación -->
@@ -108,14 +108,16 @@
                             </div>
                         </div>
 
+
+
                         <!-- Botón para abrir el modal de visualización de datos -->
-                        @if (isset($cv))
+  
                             <button type="button"
                                 class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-center text-white uppercase mt-4 transition duration-150 ease-in-out border-2 border-transparent rounded-md dark:text-sky-200 bg-sky-800 hover:bg-sky-700 active:bg-sky-700 focus:outline-none focus:border-sky-500"
                                 data-bs-toggle="modal" data-bs-target="#exampleModalView">
                                 Ver CV
                             </button>
-                        @endif
+
 
                         <!-- Modal para Ver CV -->
                         <div class="modal fade" id="exampleModalView" tabindex="-1"
