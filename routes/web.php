@@ -16,7 +16,6 @@ Route::get('/dashboard', function () {
 
 // Grupo de rutas protegidas por el middleware de autenticación
 Route::middleware('auth')->group(function () {
-<<<<<<< HEAD
     // Ruta para crear el CV
     Route::get('/cv/create', [CvController::class, 'create'])->name('cv.create');
 
@@ -28,13 +27,6 @@ Route::middleware('auth')->group(function () {
 
     // Ruta para generar el PDF del CV
     Route::get('/cv/{cv}/pdf', [CvController::class, 'downloadPdf'])->name('cv.downloadPdf');
-=======
-    // Rutas de recursos para CV (CRUD)
-    Route::resource('cv', CvController::class)->except(['index', 'create']);
-
-    // Ruta para generar el PDF del CV
-    Route::get('/cv/pdf/{cv}', [CvController::class, 'downloadPdf'])->name('cv.pdf');
->>>>>>> ramaHarold
 
     // Rutas para gestionar el perfil del usuario
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
